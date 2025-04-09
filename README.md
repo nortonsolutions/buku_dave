@@ -1,3 +1,37 @@
+## Deployment notes for Buku:
+
+**ecosystem.config.json** - PM2 configuration file for managing both backend and frontend applications [e.g. buku_bill and reporting_client]
+
+```bash
+~/projects/buku/reporting_client$ pm2 start ecosystem.config.json
+```
+[PM2] App [buku_bill_backend] launched (1 instances)
+[PM2] App [reporting_client_frontend] launched (1 instances)
+
+After that you can use the following commands to manage the applications:
+
+```bash
+pm2 list
+pm2 logs
+pm2 stop reporting_client_frontend
+pm2 stop buku_bill_backend
+pm2 restart reporting_client_frontend
+pm2 restart buku_bill_backend
+pm2 delete reporting_client_frontend
+pm2 delete buku_bill_backend
+``` 
+
+
+### Logs 
+Available in ~/.pm2/logs; can be viewed using 'pm2 logs' command.
+
+From **~/.pm2/logs/reporting-client-frontend-out.log:** and **~/.pm2/logs/buku-bill-backend-out.log:**:
+
+1|reportin | > reporting-client@0.0.1 dev /home/dave/projects/buku/reporting_client
+1|reportin |   VITE v5.4.0  ready in 1124 ms
+1|reportin |   ➜  Local:   http://localhost:5173/
+0|buku_bil | [GIN-debug] Listening and serving HTTP on :42069
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
