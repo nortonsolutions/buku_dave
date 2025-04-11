@@ -12,14 +12,12 @@ After that you can use the following commands to manage the applications:
 
 ```bash
 pm2 list
-pm2 logs
-pm2 stop reporting_client_frontend
-pm2 stop buku_bill_backend
-pm2 restart reporting_client_frontend
-pm2 restart buku_bill_backend
-pm2 delete reporting_client_frontend
-pm2 delete buku_bill_backend
+pm2 logs... etc.
 ``` 
+
+Notes:
+Notice VITE_BACKEND_URL defined in the .env; accessible via frontend code using import.meta.env.VITE_BACKEND_URL.
+
 
 
 ### Logs 
@@ -53,10 +51,10 @@ npm create svelte@latest my-app
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
-npm run dev
+yarn dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+yarn dev -- --open
 ```
 
 ## Building
@@ -64,9 +62,9 @@ npm run dev -- --open
 To create a production version of your app:
 
 ```bash
-npm run build
+yarn build
 ```
 
-You can preview the production build with `npm run preview`.
+You can preview the production build with `yarn preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
