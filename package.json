@@ -9,7 +9,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
         "start-backend": "cd ../buku_bill && go run .",
         "start-frontend": "cd ../reporting_client && vite dev",
-        "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
+        "start": "concurrently \"yarn start-backend\" \"yarn start-frontend\"",
         "lint": "eslint . --ext .ts,.svelte"
 	},
 	"devDependencies": {
