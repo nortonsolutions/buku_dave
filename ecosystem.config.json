@@ -1,0 +1,18 @@
+
+{
+    "_comment": "This file is used by PM2 to manage the applications",
+    "apps": [
+    {
+      "name": "buku_bill",
+      "script": "go",
+      "args": "run .",
+      "cwd": "../buku_bill"
+    },
+    {
+      "name": "reporting_client",
+      "script": "yarn",
+      "args": "dev",
+      "cwd": "../reporting_client"
+    }
+  ]
+}
