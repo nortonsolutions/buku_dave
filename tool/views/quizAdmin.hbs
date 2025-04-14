@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>CourseApp Admin Interface</title>
+    {{> headerStuff jQuery=true fontAwesome=true bootStrap=true mathjax=true }}
+
+</head>
+<body>
+
+    <div class="outerContainer">
+
+        {{> navbar }}
+
+        <div class="jumbotron jumbotron-fluid pt-1">
+            <div id="quizAdminInterface" class="container">
+                <div id='courseId' class='d-none'>{{courseId}}</div>
+                <div id='quizId' class='d-none'>{{quiz._id}}</div>
+                <div class="row">
+                    <div class="col-10 p-0">
+                        <h2 class="display-4">Admin: {{quiz.name}}</h2>
+                    </div>
+                    <div class="col-2 mt-4 p-0"><button id="deleteQuiz" type="button" class="form-control btn btn-danger"><i class="fas fa-minus-circle"></i> Delete</button></div>
+                </div>
+                <div class="row">
+                    <div class="col-6 p-0">
+                      <label for="quizDescription"></label>
+                      <input type="text" class="form-control" name="quizDescription" id="quizDescription" aria-describedby="helpId" value="{{quiz.description}}">
+                      <small id="helpId" class="form-text text-muted">Quiz description</small>
+                    </div>
+                    <div class="col-1 p-0">
+                          <label for="quizTimeLimit"></label>
+                          <input type="text" class="form-control" name="quizTimeLimit" id="quizTimeLimit" aria-describedby="helpId2" value="{{quiz.timeLimit}}">
+                          <small id="helpId2" class="form-text text-muted">Max time (m)</small>
+                    </div>
+                    <div class="col-1 p-0">
+                          <label for="quizMaxAttempts"></label>
+                          <input type="text" class="form-control" name="quizMaxAttempts" id="quizMaxAttempts" aria-describedby="helpId3" value="{{quiz.maxAttempts}}">
+                          <small id="helpId3" class="form-text text-muted">Max tries (#)</small>
+                    </div>
+                   <div class="col-2 p-0">
+                          <label for="quizMinPassingGrade"></label>
+                          <input type="text" class="form-control" name="quizMinPassingGrade" id="quizMinPassingGrade" aria-describedby="helpId4" value="{{quiz.minPassingGrade}}">
+                          <small id="helpId4" class="form-text text-muted">Min score to pass (%)</small>
+                    </div>
+                    <div class="col-2 p-0 text-center">
+                          <button type="button" id="saveQuiz" class="form-control btn btn-primary mt-4"><i class="fas fa-save"></i> Save</button>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-7">
+                        <div class="row">
+                            <div class="col-4 pl-0"><button id="btnNewQuestion" type="button" class="btn btn-block btn-default"><small><i class="fa fa-plus" aria-hidden="true"></i> Add</small></button></div>
+                            <div class="col-4 pr-1"><button id="btnSaveQuestion" type="submit" class="d-none btn btn-primary btn-block "><small><i class="fa fa-check" aria-hidden="true"></i> Save</small></button></div>
+                            <div class="col-4 pl-1"><button id="btnCancel" type="button" class="d-none btn btn-secondary btn-block "><small><i class="fas fa-backspace"></i> Cancel</small></button></div>
+                        </div>
+                        <form class="d-none row" id="questionDetail" method="post" action="/quizAdmin/{{courseId}}/{{quiz._id}}">
+                            {{> questionDetail }}
+                        </form>
+
+                    </div>
+                    <div class="col-5 pr-0">
+
+                        
+                        <div id="questionListContainer">
+                            {{> questionList}}
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 p-0">
+                        <span class="text-primary" id="feedback">{{feedback}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{> modalContainer questions=true}}
+    <script src="/viewScripts/quizAdminScripts.js"></script>
+
+</body>
+</html>

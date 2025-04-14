@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>CourseApp Admin Interface</title>
+    {{> headerStuff jQuery=true fontAwesome=true bootStrap=true }}
+
+</head>
+<body>
+
+    <div class="outerContainer">
+
+        {{> navbar }}
+
+        <div class="pt-1 jumbotron jumbotron-fluid">
+            <div id="adminInterface" class="container">
+                <h1 class="display-4">Main Admin Interface</h1>
+
+                <div class="row">
+                    <div class="col-3">
+                    <form id="newCourse" method="post">
+                        <div class="form-group">
+                            <label for="courseName">Add course:</label>
+                            <input type="text"
+                                class="form-control" name="courseName" id="courseName" aria-describedby="helpId" placeholder="">
+                            <small id="helpId" class="form-text text-muted">Course Name</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        
+                    </form>
+                    </div>
+                    <div class="col-3">
+                        <form id='selectCourse' action="/course" method="get">
+                            {{> selectCourse }}
+                        </form>
+                    </div>
+                    <div class="col-6">
+                        <form id='selectUser' action="/" method="get">
+                            {{> selectUser }}
+                        </form>
+                        <form class="mt-4 d-none" id="userUpdateForm" action="/updateAccount" method="post">
+                            {{> userUpdateForm }}
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <span class="text-primary" id="feedback">{{feedback}}</span>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/viewScripts/adminScripts.js"></script>
+    
+</body>
+</html>

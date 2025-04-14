@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>CourseApp Course Interface</title>
+
+    {{> headerStuff jQuery=true fontAwesome=true bootStrap=true }}
+
+</head>
+<body>
+    <input type="hidden" id="userId" value="{{userId}}">
+    <div class="outerContainer">
+        {{> navbar courseActive='active' }}
+        <div class="pt-1 jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Course Selection</h1>
+                <div class="col-5">
+                    <form id='selectCourse'>
+                        {{> selectCourse}}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('selectCourse').addEventListener('submit', (e) => {
+
+            let userId = document.getElementById('userId').value;
+            let courseId = e.target.elements.courseSelect.value;
+            localStorage.removeItem(userId + courseId);
+            window.location.href = '/course/' + courseId;
+            e.preventDefault();
+        })
+    </script>
+</body>
+</html>

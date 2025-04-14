@@ -1,10 +1,11 @@
 node_modules
-
+node_modules.tar
 # Output
 .output
 .vercel
 /.svelte-kit
 /build
+cdn.zip
 
 # OS
 .DS_Store

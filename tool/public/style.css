@@ -1,0 +1,206 @@
+/* @media (min-width: 1024px) {
+  .container {
+    max-width: 1024px !important;
+  }
+} */
+
+@media (max-width: 1024px) {
+  
+}
+
+@media (max-width: 800px) {
+  label, div, button, input[type=button], textarea {
+    font-size: 12px !important;
+  }
+
+  .newReplyText {
+    min-width: 82% !important;
+  }
+
+  #modalBody {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  label, div, button, input[type=button], textarea {
+    font-size: 11px !important;
+  }
+
+  a.nav-link {
+    font-size: 9px !important;
+  }
+
+  textarea {
+    padding: 0px !important;
+  }
+
+  .newReplyText {
+    min-width: 80% !important;
+  }
+
+  #modalBody {
+    font-size: 16px !important;
+  }
+}
+
+option:disabled {
+  color: red;
+}
+
+#modalBody .MathJax {
+  padding-right: 15px !important;
+}
+
+#currentImage, #currentVideo {
+  height: 100px;
+}
+
+.mediaContainer {
+  overflow: hidden;
+  height: 100px;
+  text-align: center;
+}
+
+.videoPresentation {
+  width: 100%;
+  max-width: 600px;
+}
+
+.bigMediaContainer {
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+}
+
+label {
+    color: blue;
+    margin: 8px 0px 0px !important;
+}
+
+.btn-std, .lbl-std {
+  width: 100px;
+}
+
+.btn-limitedHeight {
+  max-height: 31px;
+}
+
+.outerContainer {
+    margin: 20px;
+    max-width: 1024px;
+}
+
+/* .checkboxContainer {
+    padding: 5px 0px 5px 20px !important;
+} */
+
+#questionList .question:hover, 
+input[type="checkbox"], 
+.deleteQuestion, 
+#newUser, 
+#login,
+#reviewQuiz,
+.userQuiz,
+.courseLink {
+    cursor: pointer;
+}
+
+i, path, svg, .noclick {
+  pointer-events: none !important;
+}
+
+.deleteQuestion {
+    margin: 0px 0px 2px !important;
+}
+
+textarea:disabled, input:disabled {
+    background-color: white !important;
+    opacity: 1;
+}
+
+#quizGraph {
+  width: 100%;
+  padding-top: 10px;
+  background-color: white !important;
+}
+
+canvas { 
+  border: 1px solid black; 
+}
+
+svg {
+  overflow: visible !important;
+}
+
+.channel {
+  max-height: 250px; 
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* Messageboards */
+
+#questionMarked {
+  font-size: 20px;
+}
+
+#newThreadText {
+  min-width: 91%;
+}
+
+.newReplyText {
+  min-width: 88%;
+}
+
+.thread {
+  border: 2px solid black;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.replies {
+  margin-left: 20px;
+}
+
+.reply {
+  border: 1px dotted black;
+  margin: 5px !important;
+  padding: 5px;
+}
+
+/* Navbar */
+
+.navGrid {
+  display: grid !important;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.nav1 {
+  grid-column-start: 1; 
+  grid-column-end: 2; 
+}
+
+.nav2 {
+  grid-column-start: 2; 
+  grid-column-end: 3;   
+}
+
+.nav3 {
+  grid-column-start: 3; 
+  grid-column-end: 4;   
+}
+
+.nav4 {
+  grid-column-start: 11; 
+  grid-column-end: 12;   
+}
+
+.nav5 {
+  grid-column-start: 12; 
+  grid-column-end: 13;   
+}
+
+#selectQuiz {
+  margin-bottom: 0px !important
+}

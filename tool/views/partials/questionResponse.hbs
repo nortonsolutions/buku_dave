@@ -1,0 +1,27 @@
+            <div id="responseCheckboxes" class="{{{hideIfNotEqual currentQuestion.type "multi" "single"}}}">
+                <label for="question">Choices:</label>
+                {{#each currentQuestion.choices}}
+                <div class="row">
+                    <div class="col-1 pr-1">
+                        <input class="checkbox" name="checkbox{{@index}}" type="checkbox" {{{booleanCheckboxHelper correct}}}>
+                    </div>
+                    <div class="col-9 px-0 ml-1">
+                        <textarea name="text{{@index}}" rows="{{{calculateRowsShort text}}}" type="text" class="form-control" aria-describedby="helpId" placeholder="Enter text...">{{text}}</textarea>
+                    </div>
+                    <div class="col-1 px-0">
+                        <button type="button" class="p-0 btn btn-sm btnTriggerPreviewModal" data-toggle="modal" data-target="#previewModal">
+                            <i class="fas fa-code"></i>
+                        </button>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            <div id="responseText" class="{{{hideIfNotEqual currentQuestion.type "text"}}}">
+                  <label for="text">Response:</label><br>
+                  <div class="row ml-1 align-items-center">/<input type="text" style="width: 92% !important" class="form-control" name="answerTextRegex" id="answerTextRegex" aria-describedby="helpId" placeholder="Enter regex for response" value="{{currentQuestion.answerTextRegex}}">/</div>
+                  <small id="helpId" class="form-text text-muted">Enter regular expression to grade answer.</small>
+            </div>
+            <div id="responseEssay" class="{{{hideIfNotEqual currentQuestion.type "essay"}}}">
+                  <label for="essay">Essay:</label>
+                  <div class="row ml-1 align-items-center">/<textarea style="width: 92% !important" class="form-control" name="answerEssayRegex" id="answerEssayRegex" rows="1" placeholder="Enter regex for response">{{currentQuestion.answerEssayRegex}}</textarea>/</div>
+            </div>

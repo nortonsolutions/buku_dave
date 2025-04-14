@@ -1,0 +1,48 @@
+    {{#each threads}}
+    <hr>
+
+        <div class="thread" id="{{id}}">
+            <div class="main">
+                <div class="row">
+                    <div class="col-9">
+                        <small>({{created_on}}) <span class="text-danger font-weight-bold">{{{reportedHelper reported}}}</span></small><br>
+                        <small><em>{{author}}</em> wrote:</small>
+                        <h5>{{text}}</h5>
+                    </div>
+                    <div class="col-3 text-right">
+                        <div class="threadId d-none">{{id}}</div>
+                        <input class="btn btn-sm btnReport" type="button" value="Report">
+                        {{#if ../teacherPrivileges}}<input class="btn btn-sm btnDelete" type="button" value="Delete">{{/if}}
+                        <br><small class="text-primary feedback"></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="replies">
+                <a href="#">See the full thread here</a>.</h5>
+
+                {{#each replies}}
+                <div class="reply row">
+                        <div class="col-9 p-0">
+                            <small>({{created_on}}) <span class="text-danger font-weight-bold">{{{reportedHelper reported}}}</span></small>
+                            <h6>{{text}}</h6><small class="font-italic">--{{author}}</small>
+                        </div>
+                        <div class="col-3 p-0 text-right">
+                            <div class="threadId d-none">{{../id}}</div>
+                            <div class="replyId d-none">{{id}}</div>
+                            <input class="btn btn-sm btnReportReply" type="button" value="Report">
+                            {{#if ../../teacherPrivileges}}<input class="btn btn-sm btnDeleteReply" type="button" value="Delete">{{/if}}
+                            <br><small class="text-primary feedback"></small>
+                        </div>
+                </div>
+                {{/each}}
+                
+                <div class="newReply row">
+                    <div class="threadId d-none">{{id}}</div>
+                    <textarea rows="1" type='text' placeholder='Quick reply...' class='newReplyText' required=''></textarea><br>
+                    <button class='btn btn-sm btn-primary btnSubmitNewReply btn-limitedHeight' type="submit" value="Submit">Submit</button>
+                </div>
+            </div>
+            
+        </div>
+    {{/each}}

@@ -1,0 +1,9 @@
+    <label>Module:</label>
+    <select class="form-control" name="quizSelect">
+    {{#each quizzes}}
+        <option value="{{quiz.id}}" {{#if userReachedMaxAttempts}}disabled{{/if}}>{{quiz.name}}</option>
+    {{/each}}
+    </select>
+
+    <button type="submit" class="btn btn-sm btn-primary btn-std">Submit</button>
+
